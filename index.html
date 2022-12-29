@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <!--titulo da pagina-->
+    <title>Math-x-Machina</title>
+    <!--meta tags do site-->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="CCCBR">
+    <meta name="description" content="um site reservado para matematica basica do clube do computador caos brasiliense">
+    <meta name="keywords" con>
+   <!--links do site-->
+    <link rel="stylesheet" href="./css/style.css">
+    <link type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <!--scripts externos do site-->
+    <script src="https://kit.fontawesome.com/373143a8a6.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.6/p5.min.js"></script>
+
+</head>
+<body>
+    <header><!--topo do site-->
+        <div class="container">
+            <div class="logo">
+                <h1>Math-X-Machina</h1>
+            </div>
+            <nav class="menu">
+                <ul>
+                    <li><a href="" title="" class="ativo">Home</a></li>
+                    <li><a href="" title="">Livros</a></li>
+                    <li><a href="" title="">Estudo</a></li>
+                    <li><a href="" title="">Sobre</a></li>
+                    <li><a href="" title="">Contato</a></li>
+                </ul>
+            </nav>
+        </div>  
+    </header>
+
+    <section class="login">
+        <div class="opacity"></div>
+
+        <div class="container">
+
+            <div class="texto">
+                <h1>Bem vindo a math-x-machina</h1>
+                <p>um pequeno pedaço de conhecimento em um grande mar de ignorancia. <br>para ter acesso a mais livros e informações crie uma conta  </p>
+            </div>
+
+            <div class="cadastro">
+
+                <form
+                action="https://formspree.io/f/mbjerngq"
+                method="POST"
+                >
+
+                    <p>inscreva-se para receber livros e conteudos</p>
+
+                    <div class="w100">
+                        <p>nome</p>
+                        <input required type="name" name="nome" id="nome" placeholder="digite seu nome">
+                    </div>
+                    <div class="w100">
+                        <p>email</p>
+                        <input required type="email" name="email" id="email" placeholder="digite seu email">
+                    </div>
+                    <!-- <input required type="password" id="senha" placeholder="digite sua senha">
+                    <input required type="password" id="confirma" placeholder="digite sua senha"> -->
+                    <button type="submit"> 
+                        Enviar
+                    </button>
+                </form>
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="books">
+        <div class="container">
+            
+            <div class="quadroContent">
+                <h1>Quadro</h1>
+                <div class="app">
+
+                    <div class="controls">
+
+                      <div class="title">quadro</div>
+
+                      <div class="type">
+
+                        <input type="radio" name="pen-type" id="pen-pencil" checked>
+                        <label for="pen-pencil">
+                          <i class="fa fa-pencil"></i>
+                        </label>
+
+                        <input type="radio" name="pen-type" id="pen-brush">
+                        <label for="pen-brush">
+                          <i class="fa fa-paint-brush"></i>
+                        </label>
+                      </div>
+                      
+                      <div class="size">
+                        <label for="pen-size">Size</label>
+                        <input type="range" id="pen-size" min="1" max="50">
+                      </div>
+
+                      <div class="color">
+                        <label for="pen-color">Color</label>
+                        <input type="color" id="pen-color" value="#000">
+                      </div>
+
+                      <div class="actions">
+                        <button id="reset-canvas">Reset</button>
+                        <button id="save-canvas">Save</button>
+                      </div>
+
+                    </div>
+                    <div id="canvas-wrapper"></div>
+                </div>
+
+                <div class="calc">
+                    <div class="calcCont">
+                        <div class="displaynum"></div>
+                        <div class="listcalc">
+                            <button onclick="insert('√')">√</button>
+                            <button onclick="insert('²')">x²</button>
+                            <button onclick="insert('³')">x³</button>
+                            <button onclick="insert('log')">log</button>
+                            <button onclick="insert('ln')">ln</button>
+                        </div>
+                        <div class="listcalc">
+                            <button onclick="insert('π')">π</button>
+                            <button onclick="insert('hyp')">hyp</button>
+                            <button onclick="insert('sen')">sen</button>
+                            <button onclick="insert('cos')">cos</button>
+                            <button onclick="insert('tan')">tan</button>
+                        </div>
+                        <div class="listcalc">
+                            <button onclick="insert('(')">(</button>
+                            <button onclick="insert(')')">)</button>
+                            <button onclick="insert(',')">,</button>
+                            <button onclick="insert('x-¹')">x-¹</button>
+                            <button onclick="insert('x!')">x!</button>
+                        </div>
+                        <div class="listcalc">
+                            <button onclick="insert('7')">7</button>
+                            <button onclick="insert('8')">8</button>
+                            <button onclick="insert('9')">9</button>
+                            <button onclick="insert('del')">del</button>
+                            <button onclick="insert('ac')">ac</button>
+                        </div>
+                        <div class="listcalc">
+                            <button onclick="insert('4')">4</button>
+                            <button onclick="insert('5')">5</button>
+                            <button onclick="insert('6')">6</button>
+                            <button onclick="insert('x')">x</button>
+                            <button onclick="insert('/')">/</button>
+                        </div>
+                        <div class="listcalc">
+                            <button onclick="insert('3')">3</button>
+                            <button onclick="insert('2')">2</button>
+                            <button onclick="insert('1')">1</button>
+                            <button onclick="insert('+')">+</button>
+                            <button onclick="insert('-')">-</button>
+                        </div>
+                        <div class="listcalc">
+                            <button onclick="insert('0')">0</button>
+                            <button onclick="insert('.')">.</button>
+                            <button onclick="insert('a/b')">a/b</button>
+                            <button onclick="insert('ans')">ans</button>
+                            <button onclick="insert('=')">=</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <script src="./js/main.js"></script>
+</body>
+</html>
